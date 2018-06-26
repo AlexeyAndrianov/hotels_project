@@ -29,23 +29,23 @@
     </div>
   <% end %>
 
-  <%= form_for @feedback do |f| %>
+  <%= form_for [@hotel, @feedback] do |f| %>
     <%= f.hidden_field :hotel_id %>
 
     <%= f.label :send_by %><br>
     <%= f.text_field :send_by %><br>
 
     <%= f.label :review %><br>
-    <%= f.text_field :review %><br>
+    <%= f.text_area :review %><br>
 
     <%= f.label :cleanliness %><br>
-    <%= f.text_field :cleanliness %><br>
+    <%= f.select(:cleanliness, options_for_select([['5'], ['4'],['3'],['2'],['1']])) %><br>
 
     <%= f.label :placement %><br>
-    <%= f.text_field :placement %><br>
+    <%= f.select(:placement, options_for_select([['5'], ['4'],['3'],['2'],['1']])) %><br>
 
     <%= f.label :communication %><br>
-    <%= f.text_field :communication %><br>
+    <%= f.select(:communication, options_for_select([['5'], ['4'],['3'],['2'],['1']])) %><br>
 
     <%= f.submit %><br>
   <% end %>

@@ -9,7 +9,7 @@ class FeedbacksController < ApplicationController
       redirect_to hotels_path
     else
       @hotel = @feedback.hotel
-      # binding.pry
+      @persisted_feedbacks = @hotel.feedbacks.find_all  { |feedback| feedback.persisted? }
       render template: 'hotels/show'
     end
   end
@@ -24,4 +24,5 @@ class FeedbacksController < ApplicationController
       :communication,
       :placement)
   end
+
 end

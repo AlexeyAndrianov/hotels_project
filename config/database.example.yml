@@ -1,0 +1,18 @@
+defaults: &defaults
+  adapter: postgresql
+  host: localhost
+  port: 5432
+  username: alex
+  password: password
+
+development:
+  database: hotels_development
+  <<: *defaults
+
+production:
+  database: hotels_production
+  <<: *defaults
+
+test:
+  database: hotels_test
+  <<: *defaults
