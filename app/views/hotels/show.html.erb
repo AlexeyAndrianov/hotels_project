@@ -1,0 +1,52 @@
+<p> welcome to the <%= @hotel.name %> page!<p>
+  Hotel Adress:<%= @hotel.adress %><br>
+  Description: <%= @hotel.description %><br>
+
+<h1>Feedbacks:</h1>
+<% @persisted_feedbacks.each do |feedback| %>
+  Send by: <%= feedback.send_by %><br>
+  Hotel Feedback: <%= feedback.review %><br>
+  Hotel cleanliness: <%= feedback.cleanliness %><br>
+  Hotel communication: <%= feedback.communication %><br>
+  Hotel placement: <%= feedback.placement %><br>
+  <p>&nbsp;</p>
+<% end %>
+
+
+<div>
+  <h1>New feedback:</h1>
+
+
+  <% if @feedback.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@feedback.errors.count, "error") %> prohibited this feedback from being saved:</h2>
+
+      <ul>
+      <% @feedback.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form_for @feedback do |f| %>
+    <%= f.hidden_field :hotel_id %>
+
+    <%= f.label :send_by %><br>
+    <%= f.text_field :send_by %><br>
+
+    <%= f.label :review %><br>
+    <%= f.text_field :review %><br>
+
+    <%= f.label :cleanliness %><br>
+    <%= f.text_field :cleanliness %><br>
+
+    <%= f.label :placement %><br>
+    <%= f.text_field :placement %><br>
+
+    <%= f.label :communication %><br>
+    <%= f.text_field :communication %><br>
+
+    <%= f.submit %><br>
+  <% end %>
+</div>

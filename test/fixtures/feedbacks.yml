@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  send_by: MyString
+  review: MyText
+  cleanliness: 1
+  placement: 1
+  communication: 1
+
+two:
+  send_by: MyString
+  review: MyText
+  cleanliness: 1
+  placement: 1
+  communication: 1
