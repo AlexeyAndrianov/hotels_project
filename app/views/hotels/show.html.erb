@@ -3,12 +3,12 @@
   Description: <%= @hotel.description %><br>
 
 <h1>Our Statistics:</h1>
-Average cleanliness: <%= @average_rating_cleanliness %><br>
-Average placement: <%= @average_rating_placement %><br>
-Average communication: <%= @average_rating_comunication %>
+Average cleanliness: <%= @presenter.average_rating_cleanliness %><br>
+Average placement: <%= @presenter.average_rating_placement %><br>
+Average communication: <%= @presenter.average_rating_comunication %>
 
 <h1>Feedbacks:</h1>
-<% @persisted_feedbacks.each do |feedback| %>
+<% @presenter.persisted_feedbacks.each do |feedback| %>
   Send by: <%= feedback.send_by %><br>
   Hotel Feedback: <%= feedback.review %><br>
   Hotel cleanliness: <%= feedback.cleanliness %><br>
