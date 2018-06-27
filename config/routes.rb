@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+
   resources :hotels, only: [:index, :show] do
-    resources :feedbacks, only: [:index, :create]
+    scope module: 'hotels' do
+      resources :feedbacks
+    end
+
   end
 
   root to: 'hotels#index'

@@ -33,8 +33,6 @@ Average communication: <%= @presenter.average_rating_comunication %>
   <% end %>
 
   <%= form_for [@hotel, @feedback] do |f| %>
-    <%= f.hidden_field :hotel_id %>
-
     <%= f.label :send_by %><br>
     <%= f.text_field :send_by %><br>
 
