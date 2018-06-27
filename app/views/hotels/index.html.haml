@@ -1,0 +1,4 @@
+%p All hotels list:
+- @hotels.each do |hotel|
+  %p
+    Hotel Name: #{link_to hotel.name, hotel_path(hotel)}
