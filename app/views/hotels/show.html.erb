@@ -3,9 +3,9 @@
   Description: <%= @hotel.description %><br>
 
 <h1>Our Statistics:</h1>
-Average cleanliness: <%= @presenter.average_rating_cleanliness %><br>
-Average placement: <%= @presenter.average_rating_placement %><br>
-Average communication: <%= @presenter.average_rating_comunication %>
+Average cleanliness: <%= @presenter.cleanliness %><br>
+Average placement: <%= @presenter.placement %><br>
+Average communication: <%= @presenter.communication %>
 
 <h1>Feedbacks:</h1>
 <% @presenter.persisted_feedbacks.each do |feedback| %>
