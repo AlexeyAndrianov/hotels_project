@@ -10,7 +10,11 @@ module Hotels
 
     [:cleanliness, :placement, :communication].each do |name|
       define_method(name) do
-        @hotel.feedbacks.average(name).round(2)
+        if @persisted_feedbacks.any?
+          @persisted_feedbacks.average(name).round(2)
+        else
+          0
+        end
       end
     end
   end

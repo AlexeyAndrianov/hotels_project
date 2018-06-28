@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  resources :hotels, only: [:index, :show] do
+  devise_for :users
+  resources :hotels, only: [:index, :show, :new, :create] do
     scope module: 'hotels' do
       resources :feedbacks
     end

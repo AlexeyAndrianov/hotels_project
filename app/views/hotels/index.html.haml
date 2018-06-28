@@ -1,4 +1,8 @@
-%p All hotels list:
-- @hotels.each do |hotel|
-  %p
-    Hotel Name: #{link_to hotel.name, hotel_path(hotel)}
+- if user_signed_in?
+  %p All hotels list:
+  - @hotels.each do |hotel|
+    %p
+      Hotel Name: #{link_to hotel.name, hotel_path(hotel)}
+- if current_user.admin?
+  %div
+    #{link_to "Create new hotel", new_hotel_path}

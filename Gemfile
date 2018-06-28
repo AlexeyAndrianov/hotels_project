@@ -39,6 +39,7 @@ gem "haml-rails", "~> 1.0"
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'simple_form'
+gem 'devise'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
