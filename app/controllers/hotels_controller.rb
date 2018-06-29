@@ -25,6 +25,12 @@ class HotelsController < ApplicationController
     end
   end
 
+  def destroy
+    @hotel = Hotel.find(params[:id])
+    @hotel.destroy
+    redirect_to root_path
+  end
+
   private
   def admin?
     current_user.role == "admin"
