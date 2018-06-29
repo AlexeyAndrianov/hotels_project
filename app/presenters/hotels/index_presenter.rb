@@ -5,7 +5,7 @@ module Hotels
 
     def initialize(hotel)
       @hotel = hotel
-      @persisted_feedbacks = hotel.feedbacks.find_all  { |feedback| feedback.persisted? }
+      @persisted_feedbacks = Feedback.persisted(@hotel[:id])
     end
 
     [:cleanliness, :placement, :communication].each do |name|
@@ -18,5 +18,4 @@ module Hotels
       end
     end
   end
-
 end
