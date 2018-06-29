@@ -1,10 +1,46 @@
-<%= form_for @hotel do |hotel| %>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><%= link_to "Hotels list", root_path %></li>
+    <li class="breadcrumb-item active" aria-current="page">New Hotel</li>
+  </ol>
+</nav>
+<div class="container">
+  <div class="row">
+    <h1>New hotel page</h1>
+    <span class="border border-primary">
+      <div class="col-lg-6 form-group" style="background: orange">
+        <%= form_for @hotel do |hotel| %>
 
-  <%= hotel.label :name %></br>
-  <%= hotel.text_field :name %></br>
+          <%= hotel.label :name %></br>
+          <%= hotel.text_field :name, :class => 'form-control form-control-lg' %></br>
 
-  <%= hotel.label :decription %></br>
-  <%= hotel.text_field :description %></br>
+          <%= hotel.label :decription %></br>
+          <%= hotel.text_field :description, :class => 'form-control form-control-lg' %></br>
 
-  <%= hotel.submit %>
-<% end %>
+          <%= hotel.submit 'Create hotel', :class => 'btn btn-primary' %>
+        <% end %>
+      </div>
+    </span>
+    <span class="border border-primary">
+      <div class="col-lg-6 " style="background: blue">
+        Second Column!
+      </div>
+    </span>
+    <span class="border border-primary">
+      <div class="col-lg-7 " style="background: yellow">
+        Third Column!
+      </div>
+    </span>
+    <span class="border border-primary">
+      <div class="col-lg-5 " style="background: lightgreen">
+        Fourth Column!
+      </div>
+    </span>
+  </div>
+</div>
+<div class="list-group col-lg-3">
+  <button type="button" class="list-group-item">Test element 1</button>
+  <button type="button" class="list-group-item">Test element 2</button>
+  <button type="button" class="list-group-item">Test element 3</button>
+</div>
+
