@@ -7,7 +7,9 @@ module Hotels
     end
 
     def create
-      @feedback = @hotel.feedbacks.build(allowed_params)
+      @feedback = @hotel.feedbacks.build(allowed_params.merge(user_id: current_user.id))
+      @feedback_owner = @feedback.user.email
+      @presenter = Hotels::IndexPresenter.new(@hotel)
       if @feedback.save
         redirect_to  hotel_path(@hotel)
       else

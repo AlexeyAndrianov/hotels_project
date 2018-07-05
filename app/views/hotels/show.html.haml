@@ -8,6 +8,8 @@
 %h1 Our Statistics:
 Average cleanliness: #{@presenter.cleanliness}
 %br/
+#{current_user.email}
+%br/
 Average placement: #{@presenter.placement}
 %br/
 Average communication: #{@presenter.communication}
@@ -22,6 +24,8 @@ Average communication: #{@presenter.communication}
   Hotel communication: #{feedback.communication}
   %br/
   Hotel placement: #{feedback.placement}
+  %br/
+  Feedback owner email: #{feedback.user.email}
   %br/
   %p  
 %div
