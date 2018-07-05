@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_05_090924) do
+ActiveRecord::Schema.define(version: 2018_07_05_121134) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "feedbacks", force: :cascade do |t|
-    t.string "send_by"
     t.text "review"
     t.integer "cleanliness"
     t.integer "placement"

@@ -1,14 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  send_by: MyString
+  Feedback owner email: user1@mail.com
   review: MyText
   cleanliness: 1
   placement: 1
   communication: 1
 
 two:
-  send_by: MyString
+  Feedback owner email: user2@mail.com
   review: MyText
   cleanliness: 1
   placement: 1

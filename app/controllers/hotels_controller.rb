@@ -1,4 +1,5 @@
 class HotelsController < ApplicationController
+  class Forbidden < StandardError; end
   before_action :authenticate_user!
   before_action :admin?
 
@@ -14,6 +15,9 @@ class HotelsController < ApplicationController
 
   def new
     @hotel = Hotel.new
+    unless current_user.role == "admin"
+      raise Forbidden, "You are not welcomed here"
+    end
   end
 
   def create

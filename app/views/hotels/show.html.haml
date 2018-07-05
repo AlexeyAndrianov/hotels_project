@@ -8,14 +8,12 @@
 %h1 Our Statistics:
 Average cleanliness: #{@presenter.cleanliness}
 %br/
-#{current_user.email}
-%br/
 Average placement: #{@presenter.placement}
 %br/
 Average communication: #{@presenter.communication}
 %h1 Feedbacks:
 - @presenter.persisted_feedbacks.each do |feedback|
-  Send by: #{feedback.send_by}
+  Feedback send by: #{feedback.user.email}
   %br/
   Hotel Feedback: #{feedback.review}
   %br/
@@ -24,8 +22,6 @@ Average communication: #{@presenter.communication}
   Hotel communication: #{feedback.communication}
   %br/
   Hotel placement: #{feedback.placement}
-  %br/
-  Feedback owner email: #{feedback.user.email}
   %br/
   %p  
 %div
@@ -39,10 +35,6 @@ Average communication: #{@presenter.communication}
         - @feedback.errors.full_messages.each do |msg|
           %li= msg
   = form_for [@hotel, @feedback] do |f|
-    = f.label :send_by
-    %br/
-    = f.text_field :send_by
-    %br/
     = f.label :review
     %br/
     = f.text_area :review
