@@ -1,7 +1,7 @@
 class HotelsController < ApplicationController
   class Forbidden < StandardError; end
   before_action :authenticate_user!
-  before_action :admin?
+  before_action :admin?, except: [:index, :show]
 
   def index
     @hotels = Hotel.all
@@ -14,14 +14,13 @@ class HotelsController < ApplicationController
   end
 
   def new
+    binding.pry
     @hotel = Hotel.new
-    unless current_user.role == "admin"
-      raise Forbidden, "You are not welcomed here"
-    end
   end
 
   def create
     @hotel = Hotel.new(allowed_params)
+
     if @hotel.save
       redirect_to hotels_path
     else
@@ -36,8 +35,11 @@ class HotelsController < ApplicationController
   end
 
   private
+
   def admin?
-    current_user.role == "admin"
+    unless current_user.role == "admin"
+      raise Forbidden, "You are not welcomed here"
+    end
   end
 
   def allowed_params

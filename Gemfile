@@ -40,6 +40,9 @@ gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'devise'
+gem 'rspec-rails'
+gem 'factory_bot_rails'
+gem 'rails-controller-testing'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
